@@ -12,6 +12,11 @@
     />
 
     <title>Frontend Mentor | E-commerce product page</title>
+    
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap');
+    </style>
 
     <link rel="stylesheet" href="./style/style.css" />
   </head>
@@ -50,7 +55,7 @@
         <img id="imgAvatar" src="images/image-avatar.png" />
       </header>
       <figure>
-        <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+        <svg class="previous" width="12" height="18" xmlns="http://www.w3.org/2000/svg">
           <path
           d="M11 1 3 9l8 8"
           stroke="#1D2026"
@@ -59,7 +64,7 @@
           fill-rule="evenodd"
           />
         </svg>
-        <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+        <svg class="next" width="13" height="18" xmlns="http://www.w3.org/2000/svg">
           <path
           d="m2 1 8 8-8 8"
           stroke="#1D2026"
@@ -75,15 +80,15 @@
 
           <h2>Fall Limited Edition Sneakers</h2>
 
-          <p>
+          <p class="description">
             These low-profile sneakers are your perfect casual wear companion.
             Featuring a durable rubber outer sole, they’ll withstand everything
             the weather can offer.
           </p>
           <footer>
-            <p>$125.00</p>
-            <p>50%</p>
-            <p>$250.00</p>
+            <p class="reducedPrice">$125.00</p>
+            <p class="reduction">50%</p>
+            <p class="originalPrice">$250.00</p>
           </footer>
         </section>
         <footer>

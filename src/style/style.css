@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 400;
 }
 
 /* ---- MOBILE INTERGRATION ---- */
@@ -34,12 +36,9 @@ header div {
   width: 24px;
 }
 
-figure {
-  background-image:url('src/images/image-product-1.jpg');
-}
-
 .company{
   color: hsl(26, 100%, 55%);
+  margin: 15px 0px 10px 0px;
 }
 
 article {
@@ -60,6 +59,7 @@ article section footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 figure {
@@ -70,4 +70,38 @@ figure {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.previous {
+  margin-left: 5%
+}
+
+.next {
+  margin-right: 5%
+}
+
+article section h2 {
+  margin-bottom: 15px;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 700;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.reducedPrice {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 700;
+}
+
+.reduction {
+  background-color: hsl(25, 100%, 94%);
+  color:hsl(26, 100%, 55%);
+  border-radius: 16px;
+  padding: 4px;
+}
+
+.originalPrice {
+  margin-left: 50%;
 }
