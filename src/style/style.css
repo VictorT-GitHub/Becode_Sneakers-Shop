@@ -16,10 +16,6 @@
 /* --------------------------------------
            MOBILE INTEGRATION
 -------------------------------------- */
-body {
-  height: 100vh;
-  width: 375px;
-}
 
 /* ---- HEADER ---- */
 header {
@@ -30,32 +26,32 @@ header {
   margin-right: 5%;
   margin-left: 5%;
 }
+
 header div {
   display: flex;
   justify-content: space-between;
 }
+
 .headerIcons {
   margin-right: 18px;
-
   transform: translateY(4px);
 }
+
 #imgAvatar {
   height: 24px;
   width: 24px;
 }
+
 .burger,
 .shoppingCart {
   height: 0;
   width: 0;
-
   background: white;
-
   z-index: 3;
-
   position: absolute;
-
   overflow: hidden;
 }
+
 .burger.open {
   height: 100vh;
   width: 200px;
@@ -65,9 +61,7 @@ header div {
 .shoppingCart.open {
   height: 260px;
   width: 355px;
-
   border-radius: 14px;
-
   top: 85px;
   left: 10px;
 }
@@ -113,14 +107,14 @@ footer div {
   align-items: center;
 }
 
-article section footer {
+.prices {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
 
-figure {
+.bigPicture {
   background-image: url("../images/image-product-1.jpg");
   background-size: cover;
   width: 100%;
@@ -128,6 +122,7 @@ figure {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-position: center;
 }
 
 figure div {
@@ -200,6 +195,7 @@ article section h2 {
   cursor: pointer;
 }
 
+
 .addToCart p {
   margin-left: 10px;
 }
@@ -216,4 +212,192 @@ article section h2 {
 .burgerMenuCloseBTN {
   margin-left: 5%;
   margin-top: 5%;
+}
+
+/* --------------------------------------
+           Desktop Integration
+-------------------------------------- */
+@media (max-width: 849px) {
+  
+  .thumbnail {
+    display: none;
+  }
+
+  .wideScreenBio {
+    display: none;
+  }
+
+}
+
+@media (min-width: 850px) {
+
+  aside {
+    display: none;
+  }
+
+  .burgerIcon {
+    display: none;
+  }
+
+  article {
+    margin: 5% 5% 5% 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+  }  
+
+  main {
+    display: flex;
+    margin: 30px 15% 0% 15%;
+    height: 80vh;
+  }
+
+  .bigPicture {
+    background-image: url("../images/image-product-1.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-position: center;
+    height: 80%;
+    border-radius: 8px;
+  }
+
+  .photos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  .thumbnail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+    height: 20%
+  }
+  
+  .thumbnailPic1 {
+    background-image: url("/home/becode/sneakers-shop/src/images/image-product-1-thumbnail.jpg");
+    background-size: cover;
+    width: 25%;
+    height: 100%;
+    background-position: center;
+    margin-right: 5px;
+    border-radius: 8px;
+  }
+
+  .thumbnailPic2 {
+    background-image: url("/home/becode/sneakers-shop/src/images/image-product-2-thumbnail.jpg");
+    background-size: cover;
+    width: 25%;
+    height: 100%;
+    background-position: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 8px;
+  }
+
+  .thumbnailPic3 {
+    background-image: url("/home/becode/sneakers-shop/src/images/image-product-3-thumbnail.jpg");
+    background-size: cover;
+    width: 25%;
+    height: 100%;
+    background-position: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 8px;
+  }
+
+  .thumbnailPic4 {
+    background-image: url("/home/becode/sneakers-shop/src/images/image-product-4-thumbnail.jpg");
+    background-size: cover;
+    width: 25%;
+    height: 100%;
+    background-position: center;
+    margin-left: 5px;
+    border-radius: 8px;
+  }
+
+  .wideScreenBio p {
+    margin: 0 5px 0 5px;
+  }
+
+  .rightHeader {
+    margin-left: 30%;
+  }
+
+  .cartButtons {
+    width: 100%;
+    display: flex;
+  }
+  
+  .quantity {
+    background-color: hsl(223, 64%, 98%);
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+  }
+  
+  .addToCart {
+    background-color: hsl(26, 100%, 55%);
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin-left: 10px;
+  }
+
+  .prices {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .reduction {
+    background-color: hsl(25, 100%, 94%);
+    color: hsl(26, 100%, 55%);
+    border-radius: 16px;
+    padding: 4px;
+    margin-right: 70%;
+  }
+  
+  .originalPrice {
+   margin-left: 0%;
+  }
+
+  header {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 5% 30px 5%;
+    border-bottom: grey solid 2px;
+  }
+
+  .previous {
+    display: none;
+  }
+  
+  .next {
+    display: none;
+  }
 }

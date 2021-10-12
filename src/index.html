@@ -55,7 +55,7 @@
     <header>
       <div>
         <svg
-          class="toggleJsBtn headerIcons"
+          class="toggleJsBtn headerIcons burgerIcon"
           width="16"
           height="15"
           xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,14 @@
           />
         </svg>
       </div>
-      <div>
+      <div class="wideScreenBio">
+        <p>Collections</p>
+        <p>Men</p>
+        <p>Women</p>
+        <p>About</p>
+        <p>Contact</p>
+      </div>
+      <div class="rightHeader">
         <svg
           class="shoppingCartToggle headerIcons"
           width="22"
@@ -97,31 +104,39 @@
     </header>
 
     <main>
-      <figure>
-        <div class="previous">
-          <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M11 1 3 9l8 8"
-              stroke="#1D2026"
-              stroke-width="3"
-              fill="none"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </div>
+      <div class="photos">
+        <figure class="bigPicture">
+          <div class="previous">
+            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11 1 3 9l8 8"
+                stroke="#1D2026"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
 
-        <div class="next">
-          <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="m2 1 8 8-8 8"
-              stroke="#1D2026"
-              stroke-width="3"
-              fill="none"
-              fill-rule="evenodd"
-            />
-          </svg>
+          <div class="next">
+            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m2 1 8 8-8 8"
+                stroke="#1D2026"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </figure>
+        <div class="thumbnail">
+          <figure class="thumbnailPic1"></figure>
+          <figure class="thumbnailPic2"></figure>
+          <figure class="thumbnailPic3"></figure>
+          <figure class="thumbnailPic4"></figure>
         </div>
-      </figure>
+      </div>
       <article>
         <section>
           <p class="company">Sneaker Company</p>
@@ -133,7 +148,7 @@
             Featuring a durable rubber outer sole, they’ll withstand everything
             the weather can offer.
           </p>
-          <footer>
+          <footer class="prices">
             <p class="reducedPrice">$125.00</p>
             <p class="reduction">50%</p>
             <p class="originalPrice">$250.00</p>
