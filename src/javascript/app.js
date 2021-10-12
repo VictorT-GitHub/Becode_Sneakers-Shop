@@ -1,6 +1,5 @@
 const burgerMenuDiv = document.querySelector(".burger");
-const burgerMenuBTN = document.querySelector(".burgerBTN");
-const burgerCloseBTN = document.querySelector(".burgerMenuCloseBTN");
+const burgerBTNS = document.querySelectorAll(".burgerBTN");
 
 burgerMenuBTN.addEventListener("click", () =>
   burgerMenuDiv.classList.toggle("open")
