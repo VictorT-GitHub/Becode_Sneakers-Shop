@@ -8,19 +8,16 @@
 /* --------------------------------------
            MOBILE INTERGRATION
 -------------------------------------- */
-body {
-  height: 100vh;
-  width: 375px;
-}
+
 /* ---- HEADER ---- */
 
 header {
-  height: 75px;
-  width: 375px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 header div {
@@ -76,7 +73,7 @@ article section footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 figure {
@@ -121,4 +118,49 @@ article section h2 {
 
 .originalPrice {
   margin-left: 50%;
+}
+
+.cartButtons {
+  width: 100%;
+}
+
+.quantity {
+  background-color: hsl(223, 64%, 98%);
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.addToCart {
+  background-color:hsl(26, 100%, 55%);
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addToCart p {
+  margin-left: 10px;
+}
+
+.burgerBio {
+  margin-left: 5%;
+}
+
+.burgerBio > p {
+  margin: 10px 0 10px 0;
+  font-weight: 700;
+}
+
+.burgerMenuCloseBTN {
+  margin-left: 5%;
+  margin-top: 5%;
 }
