@@ -2,37 +2,55 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
 }
+
+.toggleJsBtn,
+.shoppingCartToggle,
+.plusBTN,
+.moinsBTN {
+  cursor: pointer;
+}
+
 /* --------------------------------------
-           MOBILE INTERGRATION
+           MOBILE INTEGRATION
 -------------------------------------- */
+
 body {
   height: 100vh;
   width: 375px;
 }
+
 /* ---- HEADER ---- */
+
 header {
   height: 75px;
-  width: 375px;
-
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-right: 5%;
+  margin-left: 5%;
 }
+
 header div {
   display: flex;
   justify-content: space-between;
 }
+
 .headerIcons {
   margin-right: 18px;
 
   transform: translateY(4px);
 }
+
 #imgAvatar {
   height: 24px;
   width: 24px;
 }
-.burger {
+
+.burger,
+.shoppingCart {
   height: 0;
   width: 0;
 
@@ -44,13 +62,53 @@ header div {
 
   overflow: hidden;
 }
-.open {
+
+.burger.open {
   height: 100vh;
   width: 200px;
 }
+
+/* SHOPPING CART */
+
+.shoppingCart.open {
+  height: 260px;
+  width: 355px;
+
+  border-radius: 14px;
+
+  top: 85px;
+  left: 10px;
+}
+
+.shoppingList section {
+  display: flex;
+}
+
+.imgCartItem {
+  background: url("image-product-1-thumbnail.c103ff29.jpg");
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+
+  border-radius: 5px;
+}
+
+.cartItemRemoveBtn {
+  background: url("icon-delete.cccd2c6b.svg");
+  background-size: contain;
+  height: 20px;
+  width: 18px;
+
+  border: none;
+
+  cursor: pointer;
+}
+
 .company {
   color: hsl(26, 100%, 55%);
+  margin: 15px 0px 10px 0px;
 }
+
 article {
   margin: 0% 5% 0% 5%;
   display: flex;
@@ -58,16 +116,20 @@ article {
   align-items: center;
   flex-direction: column;
 }
+
 footer div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 article section footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
+
 figure {
   background-image: url("image-product-1.f2a9a7b3.jpg");
   background-size: cover;
@@ -76,6 +138,94 @@ figure {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+figure div {
+  margin: 4%;
+
+  background: white;
+
+  height: 45px;
+  width: 45px;
+
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+article section h2 {
+  margin-bottom: 15px;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 700;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.reducedPrice {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 700;
+}
+
+.reduction {
+  background-color: hsl(25, 100%, 94%);
+  color: hsl(26, 100%, 55%);
+  border-radius: 16px;
+  padding: 4px;
+}
+
+.originalPrice {
+  margin-left: 50%;
+}
+
+.cartButtons {
+  width: 100%;
+}
+
+.quantity {
+  background-color: hsl(223, 64%, 98%);
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addToCart {
+  background-color: hsl(26, 100%, 55%);
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.addToCart p {
+  margin-left: 10px;
+}
+
+.burgerBio {
+  margin-left: 5%;
+}
+
+.burgerBio > p {
+  margin: 10px 0 10px 0;
+  font-weight: 700;
+}
+
+.burgerMenuCloseBTN {
+  margin-left: 5%;
+  margin-top: 5%;
 }
 
 /*# sourceMappingURL=index.a00031cb.css.map */
