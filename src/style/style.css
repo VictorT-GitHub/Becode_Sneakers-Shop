@@ -6,6 +6,18 @@
   font-weight: 400;
 }
 
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.toggleJsBtn,
+.shoppingCartToggle,
+.plusBTN,
+.moinsBTN {
+  cursor: pointer;
+}
+
 /* --------------------------------------
            MOBILE INTEGRATION
 -------------------------------------- */
@@ -19,22 +31,26 @@ header {
   margin-right: 5%;
   margin-left: 5%;
 }
-
 header div {
   display: flex;
   justify-content: space-between;
 }
-
 .headerIcons {
   margin-right: 18px;
   transform: translateY(4px);
 }
-
 #imgAvatar {
   height: 24px;
   width: 24px;
+
+  cursor: pointer;
+}
+#imgAvatar:hover {
+  border: 2px solid hsl(26, 100%, 55%);
+  border-radius: 100%;
 }
 
+/* ---- ASIDE ---- */
 .burger,
 .shoppingCart {
   height: 0;
@@ -44,7 +60,6 @@ header div {
   position: absolute;
   overflow: hidden;
 }
-
 .burger.open {
   height: 100vh;
   width: 200px;
@@ -56,11 +71,55 @@ header div {
   width: 355px;
   border-radius: 14px;
   top: 85px;
-  left: 10px;
-}
+  left: 50%;
+  transform: translateX(-50%);
 
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.shoppingList section {
+  display: flex;
+  justify-content: space-around;
+}
+.imgCartItem {
+  background: url("../images/image-product-1-thumbnail.jpg");
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+
+  border-radius: 5px;
+}
+span {
+  padding-right: 10px;
+}
+.cartItemRemoveBtn {
+  background: url("../images/icon-delete.svg");
+  background-size: contain;
+  height: 20px;
+  width: 18px;
+
+  border: none;
+
+  cursor: pointer;
+}
+.checkoutBtn {
+  width: 90%;
+
+  position: absolute;
+  bottom: 25px;
+  left: 5%;
+
+  font-weight: 700;
+
+  border: none;
+}
+.addToCart:hover,
+.checkoutBtn:hover {
+  filter: opacity(0.75);
+}
+/* ---- MAIN ---- */
 .company {
   color: hsl(26, 100%, 55%);
+  font-weight: 700;
   margin: 15px 0px 10px 0px;
 }
 
@@ -96,17 +155,25 @@ footer div {
   background-position: center;
 }
 
-.previous {
-  margin-left: 5%;
-}
+figure div {
+  margin: 4%;
 
-.next {
-  margin-right: 5%;
+  background: white;
+
+  height: 45px;
+  width: 45px;
+
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
 }
 
 article section h2 {
   margin-bottom: 15px;
-  font-family: "Kumbh Sans", sans-serif;
   font-weight: 700;
 }
 
@@ -115,19 +182,28 @@ article section h2 {
 }
 
 .reducedPrice {
-  font-family: "Kumbh Sans", sans-serif;
   font-weight: 700;
+  font-size: 22px;
 }
 
 .reduction {
   background-color: hsl(25, 100%, 94%);
+
   color: hsl(26, 100%, 55%);
-  border-radius: 16px;
-  padding: 4px;
+  font-weight: 700;
+
+  border-radius: 8px;
+
+  padding: 8px 4px;
 }
 
 .originalPrice {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+
   margin-left: 50%;
+
+  text-decoration: line-through rgba(0, 0, 0, 0.4);
 }
 
 .cartButtons {
@@ -136,28 +212,45 @@ article section h2 {
 
 .quantity {
   background-color: hsl(223, 64%, 98%);
-  padding: 8px;
+
+  padding: 14px;
   margin-bottom: 10px;
-  border-radius: 8px;
+
+  border-radius: 10px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.quantityNumber {
+  font-weight: 700;
+}
 
-.addToCart {
+.addToCart,
+.checkoutBtn {
   background-color: hsl(26, 100%, 55%);
   color: white;
+  font-size: 20px;
+
+  border-radius: 10px;
+
+  padding: 18px;
+
+  cursor: pointer;
+}
+.addToCart {
+  box-shadow: 0px 4px 12px hsla(26, 100%, 55%, 0.9);
+
   margin-bottom: 10px;
-  border-radius: 8px;
-  padding: 8px;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
 .addToCart p {
   margin-left: 10px;
+  font-weight: 700;
 }
 
 .burgerBio {
@@ -167,6 +260,7 @@ article section h2 {
 .burgerBio > p {
   margin: 10px 0 10px 0;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .burgerMenuCloseBTN {
@@ -178,7 +272,6 @@ article section h2 {
            Desktop Integration
 -------------------------------------- */
 @media (max-width: 849px) {
-  
   .thumbnail {
     display: none;
   }
@@ -186,27 +279,33 @@ article section h2 {
   .wideScreenBio {
     display: none;
   }
-
 }
 
 @media (min-width: 850px) {
-
-  aside {
+  /* ---- HEADER ---- */
+  .burgerIcon,
+  .burger {
     display: none;
   }
+  #imgAvatar {
+    height: 50px;
+    width: 50px;
+  }
+  .headerIcons {
+    margin-right: 45px;
+    transform: translateY(15px);
+  }
 
-  .burgerIcon {
-    display: none;
+  /* ---- SHOPPING CART ---- */
+  .shoppingCart.open {
+    left: 100%;
+    transform: translateX(-104%);
   }
 
   article {
     margin: 5% 5% 5% 5%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
     width: 50%;
-  }  
+  }
 
   main {
     display: flex;
@@ -215,14 +314,6 @@ article section h2 {
   }
 
   .bigPicture {
-    background-image: url("../images/image-product-1.jpg");
-    background-size: cover;
-    width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-position: center;
     height: 80%;
     border-radius: 8px;
   }
@@ -242,11 +333,11 @@ article section h2 {
     align-items: center;
     margin-top: 15px;
     width: 100%;
-    height: 20%
+    height: 20%;
   }
-  
+
   .thumbnailPic1 {
-    background-image: url("/home/becode/sneakers-shop/src/images/image-product-1-thumbnail.jpg");
+    background-image: url("../images/image-product-1-thumbnail.jpg");
     background-size: cover;
     width: 25%;
     height: 100%;
@@ -256,7 +347,7 @@ article section h2 {
   }
 
   .thumbnailPic2 {
-    background-image: url("/home/becode/sneakers-shop/src/images/image-product-2-thumbnail.jpg");
+    background-image: url("../images/image-product-2-thumbnail.jpg");
     background-size: cover;
     width: 25%;
     height: 100%;
@@ -267,7 +358,7 @@ article section h2 {
   }
 
   .thumbnailPic3 {
-    background-image: url("/home/becode/sneakers-shop/src/images/image-product-3-thumbnail.jpg");
+    background-image: url("../images/image-product-3-thumbnail.jpg");
     background-size: cover;
     width: 25%;
     height: 100%;
@@ -278,7 +369,7 @@ article section h2 {
   }
 
   .thumbnailPic4 {
-    background-image: url("/home/becode/sneakers-shop/src/images/image-product-4-thumbnail.jpg");
+    background-image: url("../images/image-product-4-thumbnail.jpg");
     background-size: cover;
     width: 25%;
     height: 100%;
@@ -289,6 +380,10 @@ article section h2 {
 
   .wideScreenBio p {
     margin: 0 5px 0 5px;
+    cursor: pointer;
+  }
+  .wideScreenBio p:hover {
+    font-weight: 700;
   }
 
   .wideScreenBio > p:hover {
@@ -300,59 +395,32 @@ article section h2 {
   }
 
   .cartButtons {
-    width: 100%;
     display: flex;
   }
-  
+
   .quantity {
-    background-color: hsl(223, 64%, 98%);
-    padding: 8px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 30%;
   }
-  
+
   .addToCart {
-    background-color: hsl(26, 100%, 55%);
-    color: white;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    padding: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 70%;
     margin-left: 10px;
   }
 
   .prices {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
     flex-wrap: wrap;
   }
-  
+
   .reduction {
-    background-color: hsl(25, 100%, 94%);
-    color: hsl(26, 100%, 55%);
-    border-radius: 16px;
-    padding: 4px;
     margin-right: 70%;
   }
-  
+
   .originalPrice {
-   margin-left: 0%;
+    margin-left: 0%;
   }
 
   header {
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    height: 90px;
     margin: 0px 5% 30px 5%;
     border-bottom: grey solid 2px;
   }
@@ -360,7 +428,7 @@ article section h2 {
   .previous {
     display: none;
   }
-  
+
   .next {
     display: none;
   }
