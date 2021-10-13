@@ -131,17 +131,13 @@ for (let btn of nextBtns) {
   });
 }
 
-// GALLERY BTN (the img is the btn)
-document.querySelector("#imgBtnGallery").addEventListener("click", () => {
-  document.querySelector(".imgGallery").classList.toggle("cache");
-  document.querySelector("#divFilter").classList.toggle("cache"); // FILTER DARK
-});
-
-// CLOSE GALLERY BTN
-document.querySelector(".closeGalleryBtn").addEventListener("click", () => {
-  document.querySelector(".imgGallery").classList.toggle("cache");
-  document.querySelector("#divFilter").classList.toggle("cache"); // FILTER DARK
-});
+// GALLERY BTNS (la grande image + la croix)
+for (let btn of document.querySelectorAll(".coucouKelian")) {
+  btn.addEventListener("click", () => {
+    document.querySelector(".imgGallery").classList.toggle("cache");
+    document.querySelector("#divFilter").classList.toggle("cache"); // FILTER DARK
+  });
+}
 
 // GALLERY THUMBNAIL (j'ai donné un id de 0 à 3 aux images, qui correspond aux index des images dans le array [imgArray])
 for (let img of document.querySelectorAll(".thumbnailHover")) {
