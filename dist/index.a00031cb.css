@@ -11,6 +11,21 @@ body {
   width: 100vw;
 }
 
+#divFilter {
+  height: 100vh;
+  width: 100vw;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  position: absolute;
+
+  z-index: 2;
+}
+
+.cache {
+  display: none;
+}
+
 .toggleJsBtn,
 .shoppingCartToggle,
 .plusBTN,
@@ -43,6 +58,10 @@ header div {
   transform: translateY(4px);
 }
 
+.shoppingCartToggle.black path {
+  fill: black;
+}
+
 #imgAvatar {
   height: 24px;
   width: 24px;
@@ -57,12 +76,16 @@ header div {
 
 /* ---- ASIDE ---- */
 
+aside {
+  position: relative;
+  z-index: 4;
+}
+
 .burger,
 .shoppingCart {
   height: 0;
   width: 0;
   background: white;
-  z-index: 3;
   position: absolute;
   overflow: hidden;
 }
@@ -70,6 +93,22 @@ header div {
 .burger.open {
   height: 100vh;
   width: 200px;
+}
+
+.imgGallery {
+  height: 550px;
+  width: 490px;
+
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 6%);
+}
+
+.btnFlex {
+  height: 32px;
+
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* SHOPPING CART */
@@ -172,6 +211,7 @@ footer div {
 }
 
 figure div {
+  /* c'est les fleches pour changer d'image */
   margin: 4%;
 
   background: white;
@@ -298,6 +338,11 @@ article section h2 {
   .wideScreenBio {
     display: none;
   }
+
+  .imgGallery,
+  #divFilter {
+    display: none;
+  }
 }
 
 @media (min-width: 850px) {
@@ -397,6 +442,10 @@ article section h2 {
     border-radius: 8px;
   }
 
+  /* .thumbnailHover:hover {
+    background: rgba(255, 255, 255, 0.6);
+  } */
+
   .wideScreenBio p {
     margin: 0 5px 0 5px;
     cursor: pointer;
@@ -439,13 +488,16 @@ article section h2 {
     margin: 0px 5% 30px 5%;
     border-bottom: grey solid 2px;
   }
-
-  .previous {
+  .photos .bigPicture div {
     display: none;
   }
-
-  .next {
-    display: none;
+  .imgGallery .bigPicture .next {
+    margin: 0;
+    transform: translateX(49%);
+  }
+  .imgGallery .bigPicture .previous {
+    margin: 0;
+    transform: translateX(-49%);
   }
 }
 

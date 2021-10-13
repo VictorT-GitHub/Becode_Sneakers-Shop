@@ -17,9 +17,10 @@ for (let btn of burgerBTNS) {
 const shoppingCartToggle = document.querySelector(".shoppingCartToggle");
 const shoppingCart = document.querySelector(".shoppingCart");
 
-shoppingCartToggle.addEventListener("click", () =>
-  shoppingCart.classList.toggle("open")
-);
+shoppingCartToggle.addEventListener("click", () => {
+  shoppingCart.classList.toggle("open");
+  shoppingCartToggle.classList.toggle("black");
+});
 
 // CHECKOUT BTN (boutton acheter)
 const checkoutBtn = document.querySelector(".checkoutBtn");
@@ -36,6 +37,7 @@ checkoutBtn.addEventListener("click", () => {
   }
 
   shoppingCart.classList.toggle("open");
+  shoppingCartToggle.classList.toggle("black");
 });
 
 // QUANTITY MODIFICATION BUTTONS
@@ -64,14 +66,15 @@ addToCartBtn.addEventListener("click", () => {
   updateTotalPrice(QUANTITY);
   addToCartFunction(QUANTITY);
   shoppingCart.classList.add("open");
+  shoppingCartToggle.classList.add("black");
 });
 
 // -------------------------------------------
 //          GALLERIE IMAGE BUTTONS
 // -------------------------------------------
-const prevBtn = document.querySelector(".previous");
-const nextBtn = document.querySelector(".next");
-const imgSection = document.querySelector("figure");
+const prevBtns = document.querySelectorAll(".previous");
+const nextBtns = document.querySelectorAll(".next");
+const imgSection = document.querySelectorAll(".bigPicture");
 
 const imgArray = [
   "../images/image-product-1.jpg",
@@ -82,18 +85,31 @@ const imgArray = [
 
 let i = 0;
 
-prevBtn.addEventListener("click", () => {
-  i--;
-  if (i === -1) {
-    i = imgArray.length - 1;
-  }
-  imgSection.style.backgroundImage = `url("${imgArray[i]}")`;
-});
+for (let btn of prevBtns) {
+  btn.addEventListener("click", () => {
+    i--;
+    if (i === -1) {
+      i = imgArray.length - 1;
+    }
+    for (let img of imgSection) {
+      img.style.backgroundImage = `url("${imgArray[i]}")`;
+    }
+  });
+}
 
-nextBtn.addEventListener("click", () => {
-  i++;
-  if (i === imgArray.length) {
-    i = 0;
-  }
-  imgSection.style.backgroundImage = `url("${imgArray[i]}")`;
+for (let btn of nextBtns) {
+  btn.addEventListener("click", () => {
+    i++;
+    if (i === imgArray.length) {
+      i = 0;
+    }
+    for (let img of imgSection) {
+      img.style.backgroundImage = `url("${imgArray[i]}")`;
+    }
+  });
+}
+
+document.querySelector("#imgBtnGallery").addEventListener("click", () => {
+  document.querySelector(".imgGallery").classList.toggle("cache");
+  document.querySelector("#divFilter").classList.toggle("cache");
 });
