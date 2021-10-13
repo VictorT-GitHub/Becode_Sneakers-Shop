@@ -291,6 +291,10 @@ article section h2 {
     margin: 0 5px 0 5px;
   }
 
+  .wideScreenBio > p:hover {
+    border-bottom: orange solid 3px;
+  }
+
   .rightHeader {
     margin-left: 30%;
   }
