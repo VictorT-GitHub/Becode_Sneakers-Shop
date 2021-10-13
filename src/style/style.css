@@ -166,6 +166,11 @@ span {
 .checkoutBtn:hover {
   filter: opacity(0.75);
 }
+
+.close {
+  margin: 5% 0 0 5%;
+}
+
 .cartItemSection {
   margin: 14px 0;
 }
@@ -182,6 +187,7 @@ hr {
 .company {
   color: hsl(26, 100%, 55%);
   font-weight: 700;
+  font-size: 13px;
   margin: 15px 0px 10px 0px;
 }
 
@@ -242,6 +248,7 @@ article section h2 {
 
 .description {
   margin-bottom: 20px;
+  color: hsl(219, 9%, 45%);
 }
 
 .reducedPrice {
@@ -443,7 +450,8 @@ article section h2 {
   .wideScreenBio p {
     margin: 0 5px 0 5px;
     cursor: pointer;
-    padding: 30px 0 25px 0;
+    padding: 32px 0 32px 0;
+    color: hsl(219, 9%, 45%);
   }
 
   .wideScreenBio p:hover {
@@ -483,7 +491,7 @@ article section h2 {
   header {
     height: 90px;
     margin: 0px 5% 30px 5%;
-    border-bottom: grey solid 2px;
+    border-bottom: hsl(223, 64%, 98%) solid 2px;
   }
   .photos .bigPicture div {
     display: none;
