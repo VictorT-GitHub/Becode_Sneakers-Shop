@@ -131,6 +131,18 @@ span {
   filter: opacity(0.75);
 }
 
+.toggleJsBtn {
+  margin: 5% 0 0 5%;
+}
+
+.cartItemSection {
+  margin: 10px 0 10px 0;
+}
+
+.shoppingCart  h3 {
+  margin: 5px 0 5px 17.75px;
+}
+
 /* ---- MAIN ---- */
 
 .company {
@@ -400,9 +412,16 @@ article section h2 {
   .wideScreenBio p {
     margin: 0 5px 0 5px;
     cursor: pointer;
+    padding: 30px 0 25px 0;
   }
+
   .wideScreenBio p:hover {
     font-weight: 700;
+    border-bottom: orange solid 3px;
+  }
+
+  .wideScreenBio > p:hover {
+    border-bottom: orange solid 3px;
   }
 
   .rightHeader {
