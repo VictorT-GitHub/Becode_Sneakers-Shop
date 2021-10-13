@@ -26,7 +26,8 @@ export function addToCartFunction(q) {
   let cartItemQuantity = document.createElement("span");
   cartItemQuantity.innerHTML = `x ${q}`;
   let cartItemTOTALPrice = document.createElement("span");
-  cartItemTOTALPrice.innerHTML = `$${TOTALPRICE}`;
+  cartItemTOTALPrice.innerHTML = `$${TOTALPRICE}.00`;
+  cartItemTOTALPrice.style.fontWeight = "700";
   cartItemPriceQuantity.appendChild(cartItemPrice);
   cartItemPriceQuantity.appendChild(cartItemQuantity);
   cartItemPriceQuantity.appendChild(cartItemTOTALPrice);
