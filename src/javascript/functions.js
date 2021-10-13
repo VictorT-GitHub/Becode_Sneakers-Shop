@@ -37,7 +37,14 @@ export function addToCartFunction(q) {
 
   const cartItemRemoveBtn = document.createElement("button");
   cartItemRemoveBtn.classList.add("cartItemRemoveBtn");
-  cartItemRemoveBtn.addEventListener("click", () => cartItem.remove());
+  cartItemRemoveBtn.addEventListener("click", () => {
+    cartItem.remove();
+    if (document.querySelector(".shoppingList").hasChildNodes() === false) {
+      document.querySelector(".checkoutBtn").classList.add("cache");
+      document.querySelector(".shoppingList").innerHTML = "Your cart is empty.";
+      document.querySelector(".shoppingList").classList.add("emptyCartText");
+    }
+  });
 
   cartItem.appendChild(cartItemImg);
   cartItem.appendChild(cartItemInfo);

@@ -11,11 +11,12 @@ body {
   width: 100vw;
 }
 
-#divFilter {
+#divFilter,
+#divFilter2 {
   height: 100vh;
   width: 100vw;
 
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.75);
 
   position: absolute;
 
@@ -33,9 +34,9 @@ body {
   cursor: pointer;
 }
 
-/* --------------------------------------
-           MOBILE INTEGRATION
--------------------------------------- */
+/* -----------------------------------------------
+            MOBILE-FIRST INTEGRATION
+----------------------------------------------- */
 
 /* ---- HEADER ---- */
 header {
@@ -88,7 +89,7 @@ aside {
 
 .imgGallery {
   height: 550px;
-  width: 490px;
+  width: 440px;
 
   position: absolute;
   left: 50%;
@@ -99,6 +100,13 @@ aside {
 
   display: flex;
   justify-content: flex-end;
+}
+.closeGalleryBtn path {
+  fill: rgba(245, 245, 245, 0.85);
+  transform: scale(1.4);
+}
+.closeGalleryBtn path:hover {
+  fill: hsl(26, 100%, 55%);
 }
 
 /* SHOPPING CART */
@@ -111,6 +119,12 @@ aside {
   transform: translateX(-50%);
 
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.shoppingList.emptyCartText {
+  margin-top: 84px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 700;
 }
 .shoppingList section {
   display: flex;
@@ -152,18 +166,18 @@ span {
 .checkoutBtn:hover {
   filter: opacity(0.75);
 }
-
-.toggleJsBtn {
-  margin: 5% 0 0 5%;
-}
-
 .cartItemSection {
-  margin: 10px 0 10px 0;
+  margin: 14px 0;
+}
+.shoppingCart h3 {
+  padding: 18px;
+  font-weight: 700;
+  font-size: 18px;
+}
+hr {
+  filter: opacity(0.15);
 }
 
-.shoppingCart h3 {
-  margin: 5px 0 5px 17.75px;
-}
 /* ---- MAIN ---- */
 .company {
   color: hsl(26, 100%, 55%);
@@ -283,7 +297,7 @@ article section h2 {
 
   border-radius: 10px;
 
-  padding: 18px;
+  padding: 16px;
 
   cursor: pointer;
 }
@@ -321,14 +335,8 @@ article section h2 {
            Desktop Integration
 -------------------------------------- */
 @media (max-width: 849px) {
-  .thumbnail {
-    display: none;
-  }
-
-  .wideScreenBio {
-    display: none;
-  }
-
+  .thumbnail,
+  .wideScreenBio,
   .imgGallery,
   #divFilter {
     display: none;
@@ -432,10 +440,6 @@ article section h2 {
     border-radius: 8px;
   }
 
-  /* .thumbnailHover:hover {
-    background: rgba(255, 255, 255, 0.6);
-  } */
-
   .wideScreenBio p {
     margin: 0 5px 0 5px;
     cursor: pointer;
@@ -444,11 +448,7 @@ article section h2 {
 
   .wideScreenBio p:hover {
     font-weight: 700;
-    border-bottom: orange solid 3px;
-  }
-
-  .wideScreenBio > p:hover {
-    border-bottom: orange solid 3px;
+    border-bottom: hsl(26, 100%, 55%) solid 3px;
   }
 
   .rightHeader {

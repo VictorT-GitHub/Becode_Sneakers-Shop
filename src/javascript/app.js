@@ -7,7 +7,10 @@ const burgerMenuDiv = document.querySelector(".burger");
 const burgerBTNS = document.querySelectorAll(".toggleJsBtn");
 
 for (let btn of burgerBTNS) {
-  btn.addEventListener("click", () => burgerMenuDiv.classList.toggle("open"));
+  btn.addEventListener("click", () => {
+    burgerMenuDiv.classList.toggle("open");
+    document.querySelector("#divFilter2").classList.toggle("cache"); // FILTER DARK
+  });
 }
 
 // ---------------------------------
@@ -26,15 +29,17 @@ shoppingCartToggle.addEventListener("click", () => {
 const checkoutBtn = document.querySelector(".checkoutBtn");
 
 checkoutBtn.addEventListener("click", () => {
-  if (document.querySelector(".shoppingList").hasChildNodes()) {
-    alert(
-      "Achat validé. Vous allez être redirigé vers le site internet de votre banque pour confirmer le paiement."
-    );
-  }
+  alert(
+    "Achat validé. Vous allez être redirigé vers le site internet de votre banque pour confirmer le paiement."
+  );
 
   for (let elem of document.querySelectorAll(".cartItemSection")) {
     elem.remove();
   }
+
+  checkoutBtn.classList.add("cache");
+  document.querySelector(".shoppingList").innerHTML = "Your cart is empty.";
+  document.querySelector(".shoppingList").classList.add("emptyCartText");
 
   shoppingCart.classList.toggle("open");
   shoppingCartToggle.classList.toggle("black");
@@ -63,11 +68,28 @@ plusBtn.addEventListener("click", () => {
 const addToCartBtn = document.querySelector(".addToCart");
 
 addToCartBtn.addEventListener("click", () => {
+  if (
+    document.querySelector(".shoppingList").innerHTML === "Your cart is empty."
+  ) {
+    document.querySelector(".shoppingList").innerHTML = "";
+  }
+  document.querySelector(".shoppingList").classList.remove("emptyCartText");
+
   updateTotalPrice(QUANTITY);
+
   addToCartFunction(QUANTITY);
+
+  checkoutBtn.classList.remove("cache");
   shoppingCart.classList.add("open");
   shoppingCartToggle.classList.add("black");
 });
+
+// "YOUR CART IS EMPTY" (Se joue directement au chargement de la page car le panier est vide de base)
+if (document.querySelector(".shoppingList").hasChildNodes() === false) {
+  checkoutBtn.classList.add("cache");
+  document.querySelector(".shoppingList").innerHTML = "Your cart is empty.";
+  document.querySelector(".shoppingList").classList.add("emptyCartText");
+}
 
 // -------------------------------------------
 //          GALLERIE IMAGE BUTTONS
@@ -109,7 +131,24 @@ for (let btn of nextBtns) {
   });
 }
 
+// GALLERY BTN (the img is the btn)
 document.querySelector("#imgBtnGallery").addEventListener("click", () => {
   document.querySelector(".imgGallery").classList.toggle("cache");
-  document.querySelector("#divFilter").classList.toggle("cache");
+  document.querySelector("#divFilter").classList.toggle("cache"); // FILTER DARK
 });
+
+// CLOSE GALLERY BTN
+document.querySelector(".closeGalleryBtn").addEventListener("click", () => {
+  document.querySelector(".imgGallery").classList.toggle("cache");
+  document.querySelector("#divFilter").classList.toggle("cache"); // FILTER DARK
+});
+
+// GALLERY THUMBNAIL (j'ai donné un id de 0 à 3 aux images, qui correspond aux index des images dans le array [imgArray])
+for (let img of document.querySelectorAll(".thumbnailHover")) {
+  img.addEventListener("click", (e) => {
+    for (let img of imgSection) {
+      img.style.backgroundImage = `url("${imgArray[e.target.id]}")`;
+    }
+    i = e.target.id;
+  });
+}
