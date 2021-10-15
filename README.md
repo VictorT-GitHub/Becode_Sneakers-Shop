@@ -6,7 +6,7 @@ Simple frontend integration with model
 
 GitHub Page -> [https://victort-github.github.io/Becode_sneakers-shop/](https://victort-github.github.io/Becode_sneakers-shop/)
 
-### Teamwork
+## Teamwork
 
 - **Martin Neyns** - [Martiware-99](https://github.com/Martiware-99)
 - **Victor Tardif** - That's me, and you are already on my [Github profile](https://github.com/VictorT-GitHub)
