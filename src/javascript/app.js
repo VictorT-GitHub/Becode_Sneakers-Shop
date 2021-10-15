@@ -14,6 +14,7 @@ for (let btn of burgerBTNS) {
   btn.addEventListener("click", () => {
     burgerMenuDiv.classList.toggle("open");
     document.querySelector("#divFilter2").classList.toggle("cache"); // FILTER DARK
+    shoppingCart.classList.remove("open"); // Ferme le panier à l'ouverture du menu de navigation
   });
 }
 
@@ -135,6 +136,7 @@ for (let btn of document.querySelectorAll(".coucouKelian")) {
   btn.addEventListener("click", () => {
     document.querySelector(".imgGallery").classList.toggle("cache");
     document.querySelector("#divFilter").classList.toggle("cache"); // FILTER DARK
+    shoppingCart.classList.remove("open"); // Ferme le panier à l'ouverture la gallery
   });
 }
 
