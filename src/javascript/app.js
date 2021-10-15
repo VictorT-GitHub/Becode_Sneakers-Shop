@@ -1,4 +1,8 @@
 import { addToCartFunction, updateTotalPrice } from "./functions";
+import imgGallery1 from "../images/image-product-1.jpg";
+import imgGallery2 from "../images/image-product-2.jpg";
+import imgGallery3 from "../images/image-product-3.jpg";
+import imgGallery4 from "../images/image-product-4.jpg";
 
 // -------------------------------------------
 //         HAMBURGER MENU NAVIGATION
@@ -98,12 +102,7 @@ const prevBtns = document.querySelectorAll(".previous");
 const nextBtns = document.querySelectorAll(".next");
 const imgSection = document.querySelectorAll(".bigPicture");
 
-const imgArray = [
-  "../images/image-product-1.jpg",
-  "../images/image-product-2.jpg",
-  "../images/image-product-3.jpg",
-  "../images/image-product-4.jpg",
-];
+const imgArray = [imgGallery1, imgGallery2, imgGallery3, imgGallery4];
 
 let i = 0;
 
